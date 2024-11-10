@@ -1,16 +1,9 @@
 package edu.rit.swen253.test.youtube;
-import edu.rit.swen253.page.SimplePage;
-import edu.rit.swen253.page.sample.RitAreaOfStudyLink;
-import edu.rit.swen253.page.sample.RitHomePage;
 import edu.rit.swen253.test.AbstractWebTest;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
-
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -38,10 +31,11 @@ public class YoutubTests extends AbstractWebTest {
   public void searchForPageObjectModel() {
       resultsPage = homePage.search("page object model");
       List<YoutubeSearchResultItem> searchResults = resultsPage.getSearchResults();
-      System.out.println("THE SIZE OF THIS SHIT IS " + searchResults.size());
+      searchResults.forEach(result -> {
+        logger.info("Title: " + result.getTitle() + ", URL: " + result.getUrl());
+    });
 
       assertTrue(searchResults.size() > 0);
-      // assertEquals(10, searchResults.size());
 
   }
 }

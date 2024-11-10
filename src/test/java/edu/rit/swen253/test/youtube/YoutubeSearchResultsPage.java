@@ -3,7 +3,6 @@ package edu.rit.swen253.test.youtube;
 import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,7 +20,7 @@ public class YoutubeSearchResultsPage extends AbstractPage {
     }
 
     /**
-     * Retrieves the list of search results as View Objects.
+     * Retrieves the list of search results.
      * 
      * @return a list of YoutubeSearchResultItem representing each search result
      */

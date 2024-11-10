@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 
 
 public class YoutubeSearchResultItem {
-    private static final By TITLE_LINK = By.cssSelector("h3 > a");
     private final DomElement resultElement;
 
     public YoutubeSearchResultItem(DomElement resultElement) {
@@ -18,7 +17,8 @@ public class YoutubeSearchResultItem {
      * @return the title of the search result
      */
     public String getTitle() {
-        return resultElement.findChildBy(TITLE_LINK).getText();
+        DomElement titleElement = resultElement.findChildBy(By.cssSelector("a#video-title"));
+        return titleElement.getAttribute("title");
     }
 
     /**
@@ -27,13 +27,7 @@ public class YoutubeSearchResultItem {
      * @return the URL of the search result
      */
     public String getUrl() {
-        return resultElement.findChildBy(TITLE_LINK).getAttribute("href");
-    }
-
-    /**
-     * Clicks the search result to navigate to the video page.
-     */
-    public void click() {
-        resultElement.findChildBy(TITLE_LINK).click();
+        DomElement linkElement = resultElement.findChildBy(By.cssSelector("a#video-title"));
+        return linkElement.getAttribute("href");
     }
 }

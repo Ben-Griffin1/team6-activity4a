@@ -1,8 +1,6 @@
 package edu.rit.swen253.test.youtube;
 import edu.rit.swen253.page.AbstractPage;
-import edu.rit.swen253.page.sample.RitAreaOfStudyLink;
 import edu.rit.swen253.utils.DomElement;
-import edu.rit.swen253.utils.HtmlUtils;
 import edu.rit.swen253.utils.SeleniumUtils;
 
 import org.openqa.selenium.By;
@@ -12,15 +10,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
 
 
 public class YoutubeHomePage extends AbstractPage {
-  private static final Logger logger = Logger.getLogger(YoutubeHomePage.class.getName());
   private static final By MAIN_CONTENT_FINDER = By.tagName("ytd-app");
   private static final By searchInput = By.cssSelector("input[name='search_query']");
   private static final By searchButton = By.cssSelector("button[aria-label='Search']");
@@ -40,7 +35,8 @@ public class YoutubeHomePage extends AbstractPage {
 
   public YoutubeSearchResultsPage search(String searchPhrase) {
     WebDriver driver = SeleniumUtils.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput));
     DomElement searchField = DomElement.findBy(searchInput);
     searchField.enterText(searchPhrase);
     wait.until(ExpectedConditions.elementToBeClickable(searchButton));
