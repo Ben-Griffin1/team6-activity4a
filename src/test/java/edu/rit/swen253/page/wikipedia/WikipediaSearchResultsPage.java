@@ -24,7 +24,6 @@ public class WikipediaSearchResultsPage extends AbstractPage {
 
         DomElement second = DomElement.findBy(secondRenderer);
         List<DomElement> resultElements = second.findChildrenBy(resultItem);
-        System.out.println(resultElements);
         return resultElements.stream()
                 .map(WikipediaSearchResultItem::new)
                 .collect(Collectors.toList());

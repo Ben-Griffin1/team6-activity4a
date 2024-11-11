@@ -3,11 +3,14 @@ import edu.rit.swen253.page.wikipedia.WikipediaHomePage;
 import edu.rit.swen253.page.wikipedia.WikipediaSearchResultItem;
 import edu.rit.swen253.page.wikipedia.WikipediaSearchResultsPage;
 import edu.rit.swen253.test.AbstractWebTest;
+import edu.rit.swen253.utils.SeleniumUtils;
+
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.logging.Logger;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 
@@ -37,7 +40,7 @@ public class WikipediaTest extends AbstractWebTest {
         logger.info("Title: " + result.getTitle());
     });
 
-      assertTrue(searchResults.size() > 0);
-
+      WebElement resultButton = SeleniumUtils.getDriver().findElement(By.xpath("//a[@title='Fruit salad']"));
+      resultButton.click();
   }
 }
