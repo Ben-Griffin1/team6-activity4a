@@ -16,7 +16,7 @@ import java.time.Duration;
 import java.util.logging.Logger;
 
 /**
- * A Utility class for Selenium.
+  * A Utility class for Selenium.
  *
  * @author <a href='mailto:bdbvse@rit.edu'>Bryan Basham</a>
  */

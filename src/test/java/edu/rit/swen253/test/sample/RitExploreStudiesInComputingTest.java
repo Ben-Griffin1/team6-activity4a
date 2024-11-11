@@ -31,6 +31,8 @@ public class RitExploreStudiesInComputingTest extends AbstractWebTest {
   // Test sequence
   //
 
+
+
   /**
    * First, navigate to the RIT Home page.
    */
