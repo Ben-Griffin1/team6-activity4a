@@ -21,9 +21,14 @@ public class BaeldungTest extends AbstractWebTest {
 
   private BaeldungHomePage homePage;
   private static final Logger logger = Logger.getLogger(BaeldungHomePage.class.getName());
-  
   @Test
   @Order(1)
+  public void navigateToHomePage() {
+    homePage = navigateToPage("https://www.baeldung.com/", BaeldungHomePage::new);
+  }
+
+  @Test
+  @Order(2)
   public void performSearch() {
     // Navigate to the home page
     homePage = navigateToPage("https://www.baeldung.com/", BaeldungHomePage::new);
@@ -59,7 +64,7 @@ public class BaeldungTest extends AbstractWebTest {
     assertTrue(SeleniumUtils.getDriver().getCurrentUrl().contains("spring"));
   }
 
-  // Test using page object model won't work
+  // Test using page object model won't work page object model isn't found on site
   @Disabled
   @Test
   @Order(2)
