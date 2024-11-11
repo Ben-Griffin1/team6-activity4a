@@ -12,20 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
-
 import edu.rit.swen253.page.baeldung.BaeldungHomePage;
-import edu.rit.swen253.page.baeldung.SearchResultsPage;
 import edu.rit.swen253.utils.SeleniumUtils;
 import java.util.logging.Logger;
-
-
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BaeldungTest extends AbstractWebTest {
 
   private BaeldungHomePage homePage;
-  private SearchResultsPage page;
   private static final Logger logger = Logger.getLogger(BaeldungHomePage.class.getName());
   
   @Test

@@ -1,11 +1,8 @@
 package edu.rit.swen253.page.baeldung;
 
 import org.openqa.selenium.By;
-
 import edu.rit.swen253.utils.DomElement;
 
-// This class represents a single search result on the search results page.
-// It stores the title and URL of the result and provides methods to access these properties.
 
 
 public class SearchResultView {
@@ -20,22 +17,32 @@ public class SearchResultView {
         this.url = link.getAttribute("href");  
     }
 
+    /**
+     * Retrieves the title of the search result.
+     * 
+     * @return title of search result
+     */
     public String getTitle() {
         // scrollIntoView();
         return viewContainer.findChildBy(By.cssSelector("h3.post-title > a > span.hover-wrapper")).getText();
       }
 
+      
+    /**
+     * Retrieves URL of the search result 
+     *
+     * @return the URL as a String
+     */
     public String getUrl() {
-        return url;
+        return viewContainer.findChildBy(By.cssSelector("a[rel='bookmark']")).getAttribute("href");
     }
 
-    @Override
-    public String toString() {
-        return "SearchResultView{" +
-                "title='" + title + '\'' +
-                ", url='" + url + '\'' +
-                '}';
-    }
+
+
+
+
+    
+
 }
 
 
