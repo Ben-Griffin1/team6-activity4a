@@ -21,14 +21,4 @@ public class WikipediaSearchResultItem {
         System.out.println("TITLE: "+titleElement.getAttribute("title"));;
         return titleElement.getAttribute("title");
     }
-
-    /**
-     * Gets the URL of the search result.
-     * 
-     * @return the URL of the search result
-     */
-    public String getUrl() {
-        DomElement linkElement = resultElement.findChildBy(By.cssSelector("a#video-title"));
-        return linkElement.getAttribute("href");
-    }
 }

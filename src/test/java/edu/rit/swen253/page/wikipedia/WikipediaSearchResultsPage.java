@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 
 public class WikipediaSearchResultsPage extends AbstractPage {
-    private static final By resultItem = By.cssSelector(".mw-search-results");
-    private static final By secondRenderer = By.tagName("a");
+    private static final By resultItem = By.cssSelector(".mw-search-results-container");
+    private static final By secondRenderer = By.cssSelector("a");
 
     private final DomElement resultsContainer;
 
@@ -19,16 +19,12 @@ public class WikipediaSearchResultsPage extends AbstractPage {
         this.resultsContainer = findOnPage(resultItem);
     }
 
-    /**
-     * Gets the list of search results.
-     * 
-     * @return a list of YoutubeSearchResultItem representing each search result
-     */
     public List<WikipediaSearchResultItem> getSearchResults() {
+
+
         DomElement second = DomElement.findBy(secondRenderer);
-        System.out.println(second.toString());
         List<DomElement> resultElements = second.findChildrenBy(resultItem);
-       System.out.println(resultElements.toString());
+        System.out.println(resultElements);
         return resultElements.stream()
                 .map(WikipediaSearchResultItem::new)
                 .collect(Collectors.toList());
