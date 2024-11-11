@@ -16,9 +16,9 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class WikipediaHomePage extends AbstractPage {
-  private static final By MAIN_CONTENT_FINDER = By.tagName("body");
+  private static final By MAIN_CONTENT_FINDER = By.cssSelector("main");
   private static final By searchInput = By.id("searchInput");
-  private static final By searchButton = By.className("pure-button pure-button-primary-progressive");
+  private static final By searchButton = By.cssSelector("main > div > div.banner banner-overlay banner--visible > div.pure-button pure-button-primary-progressive");
 //   private static final By searchResult = By.xpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[1]");
   private DomElement mainContentPanel;
 

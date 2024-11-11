@@ -22,12 +22,13 @@ public class WikipediaTest extends AbstractWebTest {
   @Test
   @Order(1)
   public void navigateToHomePage() {
-    homePage = navigateToPage("https://wikipedia.org", WikipediaHomePage::new);
+    homePage = navigateToPage("https://wikipedia.org", WikipediaHomePage::new);    
   }
 
   @Test
   @Order(2)
   public void searchForPageObjectModel() {
+    homePage = navigateToPage("https://wikipedia.org", WikipediaHomePage::new);    
       resultsPage = homePage.search("page object model");
       List<WikipediaSearchResultItem> searchResults = resultsPage.getSearchResults();
       searchResults.forEach(result -> {
