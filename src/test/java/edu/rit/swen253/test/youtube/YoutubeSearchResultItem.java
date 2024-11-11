@@ -12,7 +12,7 @@ public class YoutubeSearchResultItem {
     }
 
     /**
-     * Retrieves the title of the search result.
+     * Gets the title of the search result.
      * 
      * @return the title of the search result
      */
@@ -22,7 +22,7 @@ public class YoutubeSearchResultItem {
     }
 
     /**
-     * Retrieves the URL of the search result.
+     * Gets the URL of the search result.
      * 
      * @return the URL of the search result
      */

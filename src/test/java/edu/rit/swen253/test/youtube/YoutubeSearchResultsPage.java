@@ -20,7 +20,7 @@ public class YoutubeSearchResultsPage extends AbstractPage {
     }
 
     /**
-     * Retrieves the list of search results.
+     * Gets the list of search results.
      * 
      * @return a list of YoutubeSearchResultItem representing each search result
      */

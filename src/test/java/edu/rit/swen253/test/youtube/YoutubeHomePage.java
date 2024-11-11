@@ -33,6 +33,13 @@ public class YoutubeHomePage extends AbstractPage {
     }
   }
 
+  /**
+     * Finds the search field, types in the searchPhrase, and presses the search button.
+     * Waits until the search input is visible before typing searchPhrase
+     * Waits until search button is clickable before clicking
+     * 
+     * @return a new instance of YoutubeSearchResultsPage
+     */
   public YoutubeSearchResultsPage search(String searchPhrase) {
     WebDriver driver = SeleniumUtils.getDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));

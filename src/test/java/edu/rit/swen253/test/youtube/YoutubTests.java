@@ -7,11 +7,7 @@ import java.util.logging.Logger;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-/**
- * A simple test that explores RIT's area of study; 'Computing' in particular.
- *
- * @author <a href='mailto:bdbvse@rit.edu'>Bryan Basham</a>
- */
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class YoutubTests extends AbstractWebTest {
   private static final Logger logger = Logger.getLogger(YoutubTests.class.getName());
