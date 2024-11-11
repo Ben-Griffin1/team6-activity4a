@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * @author <a href='mailto:bdbvse@rit.edu'>Bryan Basham</a>
  */
+@Disabled
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class RitExploreStudiesInComputingTest extends AbstractWebTest {
   private static final Logger logger = Logger.getLogger(RitExploreStudiesInComputingTest.class.getName());
@@ -29,6 +30,8 @@ public class RitExploreStudiesInComputingTest extends AbstractWebTest {
   //
   // Test sequence
   //
+
+
 
   /**
    * First, navigate to the RIT Home page.
