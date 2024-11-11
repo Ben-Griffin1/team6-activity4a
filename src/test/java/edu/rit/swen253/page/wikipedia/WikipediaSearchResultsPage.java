@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 
 public class WikipediaSearchResultsPage extends AbstractPage {
-    private static final By resultItem = By.className("mw-search-results");
-    private static final By secondRenderer = By.xpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer[2]");
+    private static final By resultItem = By.cssSelector(".mw-search-results");
+    private static final By secondRenderer = By.tagName("a");
 
     private final DomElement resultsContainer;
 
@@ -26,8 +26,9 @@ public class WikipediaSearchResultsPage extends AbstractPage {
      */
     public List<WikipediaSearchResultItem> getSearchResults() {
         DomElement second = DomElement.findBy(secondRenderer);
+        System.out.println(second.toString());
         List<DomElement> resultElements = second.findChildrenBy(resultItem);
-
+       System.out.println(resultElements.toString());
         return resultElements.stream()
                 .map(WikipediaSearchResultItem::new)
                 .collect(Collectors.toList());

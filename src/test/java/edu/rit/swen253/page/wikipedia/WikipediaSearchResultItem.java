@@ -17,7 +17,8 @@ public class WikipediaSearchResultItem {
      * @return the title of the search result
      */
     public String getTitle() {
-        DomElement titleElement = resultElement.findChildBy(By.cssSelector("a#video-title"));
+        DomElement titleElement = resultElement.findChildBy(By.cssSelector(".mw-search-result-heading"));
+        System.out.println("TITLE: "+titleElement.getAttribute("title"));;
         return titleElement.getAttribute("title");
     }
 

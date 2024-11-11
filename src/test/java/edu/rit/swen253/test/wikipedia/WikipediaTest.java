@@ -28,7 +28,8 @@ public class WikipediaTest extends AbstractWebTest {
   @Test
   @Order(2)
   public void searchForPageObjectModel() {
-    homePage = navigateToPage("https://wikipedia.org", WikipediaHomePage::new);    
+    homePage = navigateToPage("https://wikipedia.org", WikipediaHomePage::new); 
+    homePage.closePopUpIfPresent();   
       resultsPage = homePage.search("page object model");
       List<WikipediaSearchResultItem> searchResults = resultsPage.getSearchResults();
       searchResults.forEach(result -> {
